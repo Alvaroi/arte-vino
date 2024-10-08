@@ -9,12 +9,25 @@
 <body>
     <div class="container">
         <h1>Bienvenido al Mundo del Arte y el Vino</h1>
-        <p id="texto-editable">Este es el texto que puedes modificar cuando lo desees.</p>
+        <p id="texto-editable">Este es el texto que puedes modificar cuando tengamos el texto.</p>
     </div>
 
-    <audio autoplay loop>
+    <audio id="background-music" muted autoplay loop>
         <source src="musica.mp3" type="audio/mpeg">
         Tu navegador no soporta la reproducción automática de música.
     </audio>
+
+    <script>
+        // Espera a que la página esté completamente cargada
+        window.addEventListener('load', function() {
+            // Desactivar el silencio y reproducir el audio
+            var audio = document.getElementById('background-music');
+            audio.muted = false;
+            audio.play().catch(function(error) {
+                console.log("La reproducción automática fue bloqueada.");
+            });
+        });
+    </script>
 </body>
 </html>
+
