@@ -9,25 +9,38 @@
 <body>
     <div class="container">
         <h1>Bienvenido al Mundo del Arte y el Vino</h1>
-        <p id="texto-editable">Este es el texto que puedes modificar cuando tengamos el texto.</p>
+        <p id="texto-editable">Este es el texto que puedes modificar cuando lo desees.</p>
     </div>
 
-    <audio id="background-music" muted autoplay loop>
+    <audio id="background-music" muted autoplay loop playsinline>
         <source src="musica.mp3" type="audio/mpeg">
         Tu navegador no soporta la reproducción automática de música.
     </audio>
 
     <script>
-        // Espera a que la página esté completamente cargada
+        // Asegura que la página esté completamente cargada
         window.addEventListener('load', function() {
-            // Desactivar el silencio y reproducir el audio
             var audio = document.getElementById('background-music');
             audio.muted = false;
-            audio.play().catch(function(error) {
-                console.log("La reproducción automática fue bloqueada.");
+
+            // Intentar reproducir automáticamente
+            audio.play().catch(function() {
+                console.log("Reproducción automática bloqueada. Se requerirá interacción del usuario.");
+
+                // Mostrar mensaje pidiendo una interacción para activar el audio
+                let playButton = document.createElement('button');
+                playButton.innerHTML = "Haga clic para activar la música";
+                document.body.appendChild(playButton);
+
+                // Reproducir música cuando el usuario haga clic en el botón
+                playButton.addEventListener('click', function() {
+                    audio.play();
+                    playButton.remove(); // Remover el botón después de la reproducción
+                });
             });
         });
     </script>
 </body>
 </html>
+
 
