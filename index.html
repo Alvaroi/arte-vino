@@ -5,81 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arte y Vino</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Estilo del botón para activar la música */
-        #playButton {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background-color: #8B0000;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            font-family: 'Arial', sans-serif;
-            transition: background-color 0.3s ease;
-        }
-
-        #playButton:hover {
-            background-color: #a20000;
-        }
-
-        #playButton:focus {
-            outline: none;
-        }
-
-        /* Centrar el botón */
-        .button-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
-            z-index: 10;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Bienvenido al Mundo del Arte y el Vino</h1>
         <p id="texto-editable">Como puntapié inicial de una serie de muestras relacionadas con el mundo del vino, buscamos demostrar que la belleza puede unirse al reciclaje y la sustentabilidad. Presentamos "El vino y el tiempo", donde exploramos cómo el clima influye en los materiales y los transforma. 
-            Cada elemento puede parecer que se degrada con el tiempo, pero si adoptamos otra perspectiva, descubrimos que emergen características ocultas. Como dice el escritor Richard Powers en El eco de la naturaleza: "La transformación es la esensia de la misma vida". El clima, el tiempo y el vino interactuan con la madera y el metal, generando cambios visibles, mientras que su esencia y su interior permanecen intactos.
-            
-            </p>
+            Cada elemento puede parecer que se degrada con el tiempo, pero si adoptamos otra perspectiva, descubrimos que emergen características ocultas. Como dice el escritor Richard Powers en El eco de la naturaleza: "La transformación es la esensia de la misma vida". El clima, el tiempo y el vino interactuan con la madera y el metal, generando cambios visibles, mientras que su esencia y su interior permanecen intactos.</p>
     </div>
-
-    <audio id="background-music" muted autoplay loop playsinline>
-        <source src="musica.mp3" type="audio/mpeg">
-        Tu navegador no soporta la reproducción automática de música.
-    </audio>
-
-    <div id="button-container" class="button-container">
-        <button id="playButton">Haga clic para activar la música</button>
-    </div>
-
-    <script>
-        window.addEventListener('load', function() {
-            var audio = document.getElementById('background-music');
-            var buttonContainer = document.getElementById('button-container');
-            var playButton = document.getElementById('playButton');
-
-            // Intentar reproducir automáticamente
-            audio.muted = false;
-            audio.play().catch(function() {
-                console.log("Reproducción automática bloqueada. Se requerirá interacción del usuario.");
-
-                // Reproducir música cuando el usuario haga clic en el botón
-                playButton.addEventListener('click', function() {
-                    audio.play();
-                    buttonContainer.remove(); // Remover el botón y el contenedor después de la reproducción
-                });
-            });
-        });
-    </script>
 </body>
 </html>
+
