@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #fafafa;
+    background-color: #f5f5dc; /* Beige claro */
     color: #333;
     margin: 0;
     padding: 0;
@@ -17,14 +17,10 @@ body {
 h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #8B0000;
+    color: #8B0000; /* Color vino */
 }
 
 p {
     font-size: 1.2rem;
     color: #555;
-}
-
-audio {
-    display: none; /* Esto oculta el reproductor */
 }
